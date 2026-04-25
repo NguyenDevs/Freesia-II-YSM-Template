@@ -7,5 +7,9 @@
 **/banned-players.json
 **/ops.json
 **/whitelist.json
+**/cache/
+**/libraries/
+**/versions/
 *.log
 *.pem
+*.jar
