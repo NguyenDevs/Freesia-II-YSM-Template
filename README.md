@@ -1,78 +1,83 @@
-# Freesia MODULE_Worker — Fabric Minecraft Node
+# Freesia II YSM Proxy & Worker System
 
-A high-performance, containerized background server for the Freesia system, optimized for **Yes Steve Model (YSM)** and Netty-based communication.
+A high-performance Minecraft Proxy system with integrated **Yes Steve Model (YSM)**, fully containerized using Docker for easy deployment and management.
 
-## 🚀 Docker Setup (Recommended)
+## 🏗 System Architecture
 
-Docker is the preferred way to run the Worker node as it ensures a consistent environment and automatic configuration management.
+The system consists of three main components running on a shared Docker Network (`freesia-network`):
 
-### 1. Prerequisites
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
-- Basic knowledge of terminal/command prompt.
+1.  **PROXY_Velocity**: The main entry point (Port 25565), handles player routing and YSM model management.
+2.  **SUB_Lobby**: The main Lobby server (Paper 1.21.8 - Port 25566), where players land initially.
+3.  **MODULE_Worker**: Background server node (Fabric 1.21.1 - Port 19199), handles YSM data processing and background logic.
 
-### 2. Configuration
-Create/edit the `.env` file in the root directory. This file controls almost all server settings:
+---
 
-| Variable | Description | Default |
-| :--- | :--- | :--- |
-| `JVM_MAX_HEAP` | Maximum RAM allocated to Java | `-Xmx5G` |
-| `MC_PORT` | Port for Minecraft/Query | `19199` |
-| `FREESIA_MASTER_IP` | IP of the Proxy/Controller | `host.docker.internal` |
-| `MC_ONLINE_MODE` | Set to `false` for cracked/proxy mode | `false` |
+## 🚀 Quick Start Guide
 
-### 3. Launching
-Open your terminal in this folder and run:
+### 1. Initialize Shared Network
+Before running for the first time, create the network so containers can discover each other:
 ```bash
+docker network create freesia-network
+```
+
+### 2. Launch Services
+Navigate to each directory and start the services:
+
+**Step 1: Start Proxy**
+```bash
+cd PROXY_Velocity
 docker compose up -d
 ```
-The server will start in the background. You can check the logs with:
+
+**Step 2: Start Sub Lobby**
 ```bash
-docker logs -f freesia-worker
+cd ../SUB_Lobby
+docker compose up -d
 ```
 
-### 4. Data Persistence
-The following directories and files are mapped to your host machine for safety:
-- `./world`: Your world data.
-- `./config`: All configuration files (including `security/` for certs).
-- `./mods`: Add your `.jar` mods here.
-- `./logs`: Server log history.
-- `ops.json`, `whitelist.json`, etc.: Admin settings.
+**Step 3: Start Worker Node**
+```bash
+cd ../MODULE_Worker
+docker compose up -d
+```
 
 ---
 
-## 💻 Local Execution (Run.Bat)
+## 🛠 Management & Commands (Console)
 
-If you prefer to run the server directly on your Windows machine without Docker.
+All containers are configured with **TTY** and **Interactive** mode enabled. You can access the live console to execute commands:
 
-### 1. Prerequisites
-- **Java 21** (Required) must be installed and added to your PATH.
-- Verify with `java -version`.
-
-### 2. Configuration Adjustments
-**Crucial:** When running locally, the automatic synchronization from `.env` to `server.properties` **does not occur**.
-- You must manually edit `server.properties` and `config/freesia_config.toml`.
-- **IP Change:** In `config/freesia_config.toml`, change `worker_master_ip` to `127.0.0.1` (instead of `host.docker.internal`).
-
-### 3. Launching
-Double-click `Run.Bat`. Ensure your RAM settings in the script match your machine's capacity.
+1.  **Open Console**:
+    ```bash
+    docker attach freesia-worker      # Manage Worker
+    docker attach freesia-sub-lobby   # Manage Lobby
+    docker attach freesia-velocity    # Manage Proxy
+    ```
+2.  **Safe Detach**: Press `Ctrl + P` followed by `Ctrl + Q`.
+    *(Note: Do not press Ctrl + C as it will stop the server).*
 
 ---
 
-## 🛠 Advanced Optimization
-This worker is configured as a **Background Node** by default:
-- **View Distance:** 1
-- **Spawn Animals/Monsters:** Disabled
-- **World Type:** Flat
-- **Sync Chunk Writes:** Disabled
+## 📂 Important Directory Structure
 
-These settings minimize CPU and RAM usage, allowing the server to focus entirely on YSM model processing and network communication.
+*   `**/world`: World data (persisted on host for data safety).
+*   `**/plugins` or `**/mods`: Directory for additional features and mods.
+*   `**/config`: System configuration files.
+*   `.gitignore`: Configured to exclude junk files, logs, and security certificates (`.pem`) from Git commits.
 
 ---
 
 ## 🔒 Security (mTLS)
-If using mTLS, place your certificates in:
-- `config/security/worker_cert.pem`
-- `config/security/worker_key.pem`
-- `config/security/proxy_cert.pem` (Trust anchor)
 
-Alternatively, you can inject these via Base64 in the `.env` file for Docker deployments.
+The system supports mTLS between the Worker and Proxy. For mTLS to function correctly, you must **exchange certificates**:
+*   The **Proxy** needs the `worker_cert.pem` to verify the Worker.
+*   The **Worker** needs the `proxy_cert.pem` to verify the Proxy.
+
+Certificates are stored at:
+*   `PROXY_Velocity/plugins/Freesia/security/`
+*   `MODULE_Worker/config/security/`
+
+*(Note: These files are excluded from Git for security purposes).*
+
+---
+**Developed by NguyenDevs**
