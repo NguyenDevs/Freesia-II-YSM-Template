@@ -43,6 +43,8 @@ RUN chmod +x /server/docker-entrypoint.sh
 EXPOSE 25566
 
 # ── Volume for world data ──────────────────────────────
-VOLUME ["/server/world"]
+# ── Removed VOLUME to prevent masking host-mounted directories ──
+# VOLUME ["/server/world"]
+
 
 ENTRYPOINT ["/server/docker-entrypoint.sh"]
