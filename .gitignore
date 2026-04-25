@@ -2,6 +2,7 @@
 **/logs/
 **/crash-reports/
 **/world/
+**/lobby/
 **/usercache.json
 **/banned-ips.json
 **/banned-players.json
