@@ -1,0 +1,27 @@
+# =============================================================
+# .dockerignore — MODULE_Worker
+# Remove unnecessary files from Docker build context
+# =============================================================
+
+# Windows scripts
+Run.Bat
+*.bat
+
+# World data (mount via volume during runtime)
+world/
+
+# Crash reports & logs
+crash-reports/
+logs/
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Caches
+*.bin
+
+# Git
+.git/
+.gitignore
