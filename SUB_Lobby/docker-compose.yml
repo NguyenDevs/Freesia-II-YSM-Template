@@ -8,6 +8,8 @@ services:
     image: freesia/sub-lobby:1.0.0
     container_name: freesia-sub-lobby
     restart: unless-stopped
+    tty: true
+    stdin_open: true
     
     networks:
       - freesia-network

@@ -13,6 +13,8 @@ services:
     image: freesia/module-worker:1.0.5
     container_name: freesia-worker
     restart: unless-stopped
+    tty: true
+    stdin_open: true
     
     networks:
       - freesia-network

@@ -10,6 +10,16 @@
 **/cache/
 **/libraries/
 **/versions/
+**/plugins/.paper-remapped/
+**/plugins/Essentials/userdata/
+**/plugins/LuckPerms/*.db
+**/plugins/WorldGuard/cache/
+**/plugins/spark/
 *.log
 *.pem
 *.jar
+*.bin
+*.db
+*.sqlite
+*.dat
+*.tmp
