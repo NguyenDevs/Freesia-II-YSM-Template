@@ -1,31 +1,45 @@
 network_compression_threshold: 256
 remote_ping_timeout: 5000
-remote_ping_cache: -1
 online_mode: true
+remote_ping_cache: -1
 forge_support: true
 max_packets_per_second: 4096
-ip_forward: true
+listeners:
+- query_port: 25577
+  motd: Freesia Waterfall Proxy
+  tab_list: GLOBAL_PING
+  query_enabled: false
+  proxy_protocol: false
+  forced_hosts: {}
+  ping_passthrough: false
+  priorities:
+  - lobby
+  bind_local_address: true
+  host: 0.0.0.0:25565
+  max_players: 1
+  tab_size: 60
+  force_default_server: true
 disabled_commands:
 - disabledcommandhere
 max_packets_data_per_second: 33554432
-reject_transfers: false
 player_limit: -1
-connection_throttle: 4000
+reject_transfers: false
+log_commands: false
 connection_throttle_limit: 3
 prevent_proxy_connections: false
-log_commands: false
+connection_throttle: 4000
 log_pings: true
-stats: 64b62a85-db95-40c0-ac6b-2aade6917b67
 groups: {}
+stats: 64b62a85-db95-40c0-ac6b-2aade6917b67
 servers:
   lobby:
-    motd: '&1Just another Waterfall - Forced Host'
+    motd: Freesia Waterfall Proxy
     address: localhost:25566
     restricted: false
   iris:
     address: localhost:25567
     restricted: false
-    motd: '&1Just another Waterfall - Forced Host'
+    motd: Freesia Waterfall Proxy
 permissions:
   default:
   - bungeecord.command.server
@@ -40,21 +54,7 @@ permissions:
   - bungeecord.command.send
   - bungeecord.command.find
   - bungeecord.command.perms
-listeners:
-- query_port: 25577
-  motd: '&1Another Bungee server'
-  tab_list: GLOBAL_PING
-  query_enabled: false
-  proxy_protocol: false
-  forced_hosts: {}
-  ping_passthrough: false
-  priorities:
-  - lobby
-  bind_local_address: true
-  host: 0.0.0.0:25565
-  max_players: 1
-  tab_size: 60
-  force_default_server: true
+ip_forward: true
 enforce_secure_profile: false
 server_connect_timeout: 5000
 timeout: 30000
