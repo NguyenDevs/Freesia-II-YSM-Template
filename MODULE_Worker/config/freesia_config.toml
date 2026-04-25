@@ -1,0 +1,12 @@
+[worker]
+	worker_master_ip = "velocity"
+	worker_master_port = 19200
+	controller_reconnect_interval = 5
+	player_data_cache_invalidate_interval_seconds = 30
+
+[security]
+	trust_proxy_cert_path = "security/proxy_cert.pem"
+	enable_tls = true
+	worker_cert_path = "security/worker_cert.pem"
+	worker_key_path = "security/worker_key.pem"
+	trust_all = false

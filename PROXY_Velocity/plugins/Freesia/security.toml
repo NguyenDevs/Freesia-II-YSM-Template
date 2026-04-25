@@ -2,8 +2,9 @@
 	trust_worker_cert_path = "security/worker_cert.pem"
 	enable_tls = true
 	cert_path = "security/proxy_cert.pem"
+	trust_all = true
 	key_path = "security/proxy_key.pem"
 	use_self_signed = true
 [firewall]
-	enable_ip_filter = true
+	enable_ip_filter = false
 	allowed_worker_ips = ["127.0.0.1", "192.168.1.5"]

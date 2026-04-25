@@ -54,39 +54,38 @@ apply_prop "entity-broadcast-range-percentage" "${MC_ENTITY_BROADCAST:-10}"
 FREESIA_CFG="/server/config/freesia_config.toml"
 echo "[2/4] Applying freesia_config.toml overrides..."
 
-if [ ! -f "$FREESIA_CFG" ]; then
-    echo "  [WARN] $FREESIA_CFG not found, skipping overrides."
-else
+# If file doesn't exist, we skip (it will be created by the server later)
+if [ -f "$FREESIA_CFG" ]; then
     if [ -n "$FREESIA_MASTER_IP" ]; then
-        sed -i "s|worker_master_ip = \".*\"|worker_master_ip = \"${FREESIA_MASTER_IP}\"|" "$FREESIA_CFG"
+        sed -i "s|^[[:space:]]*worker_master_ip = \".*\"|	worker_master_ip = \"${FREESIA_MASTER_IP}\"|" "$FREESIA_CFG"
         echo "  [CFG] worker_master_ip = ${FREESIA_MASTER_IP}"
     fi
 
     if [ -n "$FREESIA_MASTER_PORT" ]; then
-        sed -i "s|worker_master_port = .*|worker_master_port = ${FREESIA_MASTER_PORT}|" "$FREESIA_CFG"
+        sed -i "s|^[[:space:]]*worker_master_port = .*|	worker_master_port = ${FREESIA_MASTER_PORT}|" "$FREESIA_CFG"
         echo "  [CFG] worker_master_port = ${FREESIA_MASTER_PORT}"
     fi
 
-if [ -n "$FREESIA_RECONNECT_INTERVAL" ]; then
-    sed -i "s|controller_reconnect_interval = .*|controller_reconnect_interval = ${FREESIA_RECONNECT_INTERVAL}|" "$FREESIA_CFG"
-    echo "  [CFG] controller_reconnect_interval = ${FREESIA_RECONNECT_INTERVAL}"
-fi
+    if [ -n "$FREESIA_RECONNECT_INTERVAL" ]; then
+        sed -i "s|^[[:space:]]*controller_reconnect_interval = .*|	controller_reconnect_interval = ${FREESIA_RECONNECT_INTERVAL}|" "$FREESIA_CFG"
+        echo "  [CFG] controller_reconnect_interval = ${FREESIA_RECONNECT_INTERVAL}"
+    fi
 
-if [ -n "$FREESIA_CACHE_INVALIDATE" ]; then
-    sed -i "s|player_data_cache_invalidate_interval_seconds = .*|player_data_cache_invalidate_interval_seconds = ${FREESIA_CACHE_INVALIDATE}|" "$FREESIA_CFG"
-    echo "  [CFG] player_data_cache_invalidate_interval_seconds = ${FREESIA_CACHE_INVALIDATE}"
-fi
+    if [ -n "$FREESIA_CACHE_INVALIDATE" ]; then
+        sed -i "s|^[[:space:]]*player_data_cache_invalidate_interval_seconds = .*|	player_data_cache_invalidate_interval_seconds = ${FREESIA_CACHE_INVALIDATE}|" "$FREESIA_CFG"
+        echo "  [CFG] player_data_cache_invalidate_interval_seconds = ${FREESIA_CACHE_INVALIDATE}"
+    fi
 
-# TLS / Security settings
-if [ -n "$FREESIA_TLS_ENABLED" ]; then
-    sed -i "s|enable_tls = .*|enable_tls = ${FREESIA_TLS_ENABLED}|" "$FREESIA_CFG"
-    echo "  [CFG] enable_tls = ${FREESIA_TLS_ENABLED}"
-fi
+    # TLS / Security settings
+    if [ -n "$FREESIA_TLS_ENABLED" ]; then
+        sed -i "s|^[[:space:]]*enable_tls = .*|	enable_tls = ${FREESIA_TLS_ENABLED}|" "$FREESIA_CFG"
+        echo "  [CFG] enable_tls = ${FREESIA_TLS_ENABLED}"
+    fi
 
-if [ -n "$FREESIA_TRUST_ALL" ]; then
-    sed -i "s|trust_all = .*|trust_all = ${FREESIA_TRUST_ALL}|" "$FREESIA_CFG"
-    echo "  [CFG] trust_all = ${FREESIA_TRUST_ALL}"
-fi
+    if [ -n "$FREESIA_TRUST_ALL" ]; then
+        sed -i "s|^[[:space:]]*trust_all = .*|	trust_all = ${FREESIA_TRUST_ALL}|" "$FREESIA_CFG"
+        echo "  [CFG] trust_all = ${FREESIA_TRUST_ALL}"
+    fi
 fi
 
 # ── 3. Inject certificates from env (base64) ──────────────

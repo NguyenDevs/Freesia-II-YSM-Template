@@ -14,12 +14,13 @@ services:
     container_name: freesia-worker
     restart: unless-stopped
     
+    networks:
+      - freesia-network
+
     # ── Fix DNS & Connectivity ──────────────────────────────
     dns:
       - 8.8.8.8
       - 1.1.1.1
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
 
     # ── Ports ───────────────────────────────────────────────
     ports:
@@ -99,3 +100,6 @@ services:
       retries: 5
       start_period: 60s
 
+networks:
+  freesia-network:
+    external: true

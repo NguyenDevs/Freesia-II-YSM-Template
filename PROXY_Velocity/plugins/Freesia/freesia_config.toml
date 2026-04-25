@@ -5,7 +5,7 @@
 [messages]
 	language = "en_US"
 [worker]
-	worker_master_ip = "localhost"
+	worker_master_ip = "0.0.0.0"
 	worker_master_port = 19200
 	worker_msession_port = 19199
-	worker_msession_ip = "localhost"
+	worker_msession_ip = "freesia-worker"
