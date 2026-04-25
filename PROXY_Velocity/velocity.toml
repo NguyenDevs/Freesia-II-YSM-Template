@@ -75,8 +75,8 @@ sample-players-in-ping = false
 enable-player-address-logging = true
 
 [servers]
-lobby = "freesia-worker:19199"
-sub-lobby = "freesia-sub-lobby:25566"
+# Chỉ đăng ký Lobby (Paper) ở đây. Worker sẽ tự kết nối ngầm qua plugin Freesia.
+lobby = "freesia-sub-lobby:25566"
 
 # In what order we should try servers when a player logs in or is kicked from a server.
 try = [
