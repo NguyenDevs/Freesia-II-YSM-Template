@@ -13,7 +13,7 @@ apply_prop() {
     local value="$2"
     if [ -n "$value" ]; then
         if grep -q "^${key}=" "$PROPS_FILE"; then
-            sed -i "s|^${key}=.*|${key}=${value}|" "$PROPS_FILE"
+            sed "s|^${key}=.*|${key}=${value}|" "$PROPS_FILE" > "$PROPS_FILE.tmp" && cat "$PROPS_FILE.tmp" > "$PROPS_FILE" && rm "$PROPS_FILE.tmp"
         else
             echo "${key}=${value}" >> "$PROPS_FILE"
         fi
@@ -38,9 +38,10 @@ apply_prop "generate-structures"          "${MC_GENERATE_STRUCTURES:-false}"
 apply_prop "max-tick-time"                "${MC_MAX_TICK_TIME:-60000}"
 apply_prop "network-compression-threshold" "${MC_NETWORK_COMPRESSION_THRESHOLD:-256}"
 
-# ── 2. Fix permissions ───────────────────────────────────
+# ── 2. Fix permissions (Selective to avoid hanging on large volumes) ──
 echo "[2/3] Fixing file permissions..."
-chown -R minecraft:minecraft /server /home/minecraft
+chown minecraft:minecraft /server
+chown -R minecraft:minecraft /server/world /server/logs /server/plugins /home/minecraft 2>/dev/null || true
 
 # ── 3. Start server ──────────────────────────────────────
 JVM_OPTS="${JVM_MAX_HEAP:--Xmx2G} ${JVM_MIN_HEAP:--Xms512M} ${JVM_EXTRA_OPTS:-}"
