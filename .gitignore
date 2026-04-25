@@ -23,15 +23,3 @@
 *.sqlite
 *.dat
 *.tmp
-
-# Paper/Spigot/Bukkit Configs
-**/paper-global.yml
-**/paper-world-defaults.yml
-**/paper-world.yml
-**/bukkit.yml
-**/spigot.yml
-**/help.yml
-**/permissions.yml
-**/commands.yml
-**/wepif.yml
-**/server.properties
