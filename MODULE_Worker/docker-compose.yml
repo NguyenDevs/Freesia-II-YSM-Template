@@ -18,12 +18,11 @@ services:
     networks:
       - freesia-network
 
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
-
     ports:
       - "${MC_PORT:-19199}:19199"
+
+    env_file:
+      - .env
 
     volumes:
       - ./.fabric:/server/.fabric
@@ -42,47 +41,6 @@ services:
       - ./server.properties:/server/server.properties
       - ./mounts.json:/server/mounts.json
       - ./freesia_node_info.bin:/server/freesia_node_info.bin
-
-    environment:
-      JVM_MAX_HEAP: "${JVM_MAX_HEAP:--Xmx5G}"
-      JVM_MIN_HEAP: "${JVM_MIN_HEAP:--Xms512M}"
-      JVM_EXTRA_OPTS: "${JVM_EXTRA_OPTS:-}"
-      MC_PORT: "${MC_PORT:-19199}"
-      MC_BIND_IP: "${MC_BIND_IP:-0.0.0.0}"
-      MC_MAX_PLAYERS: "${MC_MAX_PLAYERS:-2000}"
-      MC_ONLINE_MODE: "${MC_ONLINE_MODE:-true}"
-      MC_MOTD: "${MC_MOTD:-Freesia Worker Node}"
-      MC_DIFFICULTY: "${MC_DIFFICULTY:-peaceful}"
-      MC_GAMEMODE: "${MC_GAMEMODE:-survival}"
-      MC_PVP: "${MC_PVP:-false}"
-      MC_ALLOW_NETHER: "${MC_ALLOW_NETHER:-false}"
-      MC_GENERATE_STRUCTURES: "${MC_GENERATE_STRUCTURES:-false}"
-      MC_VIEW_DISTANCE: "${MC_VIEW_DISTANCE:-1}"
-      MC_SIMULATION_DISTANCE: "${MC_SIMULATION_DISTANCE:-1}"
-      MC_COMPRESSION_THRESHOLD: "${MC_COMPRESSION_THRESHOLD:-256}"
-      MC_PREVENT_PROXY: "${MC_PREVENT_PROXY:-false}"
-      MC_ENFORCE_SECURE_PROFILE: "${MC_ENFORCE_SECURE_PROFILE:-true}"
-      MC_SPAWN_ANIMALS: "${MC_SPAWN_ANIMALS:-false}"
-      MC_SPAWN_MONSTERS: "${MC_SPAWN_MONSTERS:-false}"
-      MC_SPAWN_NPCS: "${MC_SPAWN_NPCS:-true}"
-      MC_MAX_TICK_TIME: "${MC_MAX_TICK_TIME:-60000}"
-      MC_LOG_IPS: "${MC_LOG_IPS:-false}"
-      FREESIA_MASTER_IP: "${FREESIA_MASTER_IP:-127.0.0.1}"
-      FREESIA_MASTER_PORT: "${FREESIA_MASTER_PORT:-19200}"
-      FREESIA_RECONNECT_INTERVAL: "${FREESIA_RECONNECT_INTERVAL:-1}"
-      FREESIA_CACHE_INVALIDATE: "${FREESIA_CACHE_INVALIDATE:-30}"
-      FREESIA_TLS_ENABLED: "${FREESIA_TLS_ENABLED:-true}"
-      FREESIA_TRUST_ALL: "${FREESIA_TRUST_ALL:-false}"
-      WORKER_CERT_B64: "${WORKER_CERT_B64:-}"
-      WORKER_KEY_B64: "${WORKER_KEY_B64:-}"
-      PROXY_CERT_B64: "${PROXY_CERT_B64:-}"
-
-    deploy:
-      resources:
-        limits:
-          memory: 6G
-        reservations:
-          memory: 1G
 
 networks:
   freesia-network:

@@ -43,6 +43,16 @@ docker compose up -d
 
 ---
 
+## 🌐 Networking & Connectivity
+
+Depending on your deployment setup, you may need to adjust `FREESIA_MASTER_IP` in your `.env` files:
+
+*   **Same Docker Network (Default)**: Use the container name `velocity`. Docker's internal DNS will handle the resolution.
+*   **Same Machine, Different Networks**: Use `host.docker.internal` (Windows/Mac) to route through the host machine. Ensure port `19200` is exposed in Proxy's `docker-compose.yml`.
+*   **Different Physical Servers (Remote)**: Use the **Public IP** of the server running the Proxy. Ensure port `19200` is open in the firewall.
+
+---
+
 ## 🛠 Management & Commands (Console)
 
 All containers are configured with **TTY** and **Interactive** mode enabled. You can access the live console to execute commands:
