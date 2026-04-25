@@ -16,8 +16,9 @@ services:
     networks:
       - freesia-network
     volumes:
-      - ./plugins:/proxy/plugins
+      - ./lang:/proxy/lang
       - ./logs:/proxy/logs
+      - ./plugins:/proxy/plugins
       - ./velocity.toml:/proxy/velocity.toml
       - ./forwarding.secret:/proxy/forwarding.secret
       - ./plugins/Freesia/security:/proxy/plugins/Freesia/security

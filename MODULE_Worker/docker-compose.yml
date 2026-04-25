@@ -1,6 +1,5 @@
 # =============================================================
 # docker-compose.yml — Freesia MODULE_Worker
-# Run: docker compose up -d
 # =============================================================
 
 version: "3.9"
@@ -19,38 +18,32 @@ services:
     networks:
       - freesia-network
 
-    # ── Fix DNS & Connectivity ──────────────────────────────
     dns:
       - 8.8.8.8
       - 1.1.1.1
 
-    # ── Ports ───────────────────────────────────────────────
     ports:
-      - "${MC_PORT:-19199}:19199"       # Minecraft / Query port
+      - "${MC_PORT:-19199}:19199"
 
-    # ── Volumes ─────────────────────────────────────────────
     volumes:
-      - ./world:/server/world
+      - ./.fabric:/server/.fabric
       - ./config:/server/config
-      - ./config/security:/server/config/security
-      - ./mods:/server/mods
+      - ./libraries:/server/libraries
       - ./logs:/server/logs
+      - ./mods:/server/mods
+      - ./versions:/server/versions
+      - ./world:/server/world
       - ./crash-reports:/server/crash-reports
+      - ./usercache.json:/server/usercache.json
       - ./ops.json:/server/ops.json
       - ./whitelist.json:/server/whitelist.json
       - ./banned-players.json:/server/banned-players.json
       - ./banned-ips.json:/server/banned-ips.json
-      - ./usercache.json:/server/usercache.json
 
-    # ── Environment Variables ────────────────────────────────
     environment:
-
-      # ---- JVM Tuning ----
       JVM_MAX_HEAP: "${JVM_MAX_HEAP:--Xmx5G}"
       JVM_MIN_HEAP: "${JVM_MIN_HEAP:--Xms512M}"
-      JVM_EXTRA_OPTS: "${JVM_EXTRA_OPTS:-}"   # VD: -XX:+UseG1GC -XX:MaxGCPauseMillis=200
-
-      # ---- server.properties overrides ----
+      JVM_EXTRA_OPTS: "${JVM_EXTRA_OPTS:-}"
       MC_PORT: "${MC_PORT:-19199}"
       MC_BIND_IP: "${MC_BIND_IP:-0.0.0.0}"
       MC_MAX_PLAYERS: "${MC_MAX_PLAYERS:-2000}"
@@ -71,36 +64,22 @@ services:
       MC_SPAWN_NPCS: "${MC_SPAWN_NPCS:-true}"
       MC_MAX_TICK_TIME: "${MC_MAX_TICK_TIME:-60000}"
       MC_LOG_IPS: "${MC_LOG_IPS:-false}"
-
-      # ---- freesia_config.toml overrides ----
-      FREESIA_MASTER_IP: "${FREESIA_MASTER_IP:-127.0.0.1}"     # Proxy/Controller IP
-      FREESIA_MASTER_PORT: "${FREESIA_MASTER_PORT:-19200}"      # Proxy Netty Port
+      FREESIA_MASTER_IP: "${FREESIA_MASTER_IP:-127.0.0.1}"
+      FREESIA_MASTER_PORT: "${FREESIA_MASTER_PORT:-19200}"
       FREESIA_RECONNECT_INTERVAL: "${FREESIA_RECONNECT_INTERVAL:-1}"
       FREESIA_CACHE_INVALIDATE: "${FREESIA_CACHE_INVALIDATE:-30}"
-
-      # ---- TLS / mTLS ----
       FREESIA_TLS_ENABLED: "${FREESIA_TLS_ENABLED:-true}"
       FREESIA_TRUST_ALL: "${FREESIA_TRUST_ALL:-false}"
-      # Inject certs via base64 (optional – if volume mount is not used)
       WORKER_CERT_B64: "${WORKER_CERT_B64:-}"
       WORKER_KEY_B64: "${WORKER_KEY_B64:-}"
       PROXY_CERT_B64: "${PROXY_CERT_B64:-}"
 
-    # ── Resource Limits ──────────────────────────────────────
     deploy:
       resources:
         limits:
           memory: 6G
         reservations:
           memory: 1G
-
-    # ── Health Check ─────────────────────────────────────────
-    healthcheck:
-      test: ["CMD", "bash", "-c", "cat /dev/null > /dev/tcp/localhost/${MC_PORT:-19199}"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-      start_period: 60s
 
 networks:
   freesia-network:

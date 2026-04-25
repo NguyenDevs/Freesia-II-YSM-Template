@@ -26,11 +26,21 @@ apply_prop "server-port"                  "${MC_PORT:-25566}"
 apply_prop "server-ip"                    "${MC_BIND_IP:-0.0.0.0}"
 apply_prop "max-players"                  "${MC_MAX_PLAYERS:-200}"
 apply_prop "online-mode"                  "${MC_ONLINE_MODE:-false}"
-apply_prop "motd"                         "${MC_MOTD:-A Minecraft Server}"
+apply_prop "motd"                         "${MC_MOTD:-Freesia Sub Lobby}"
+apply_prop "difficulty"                   "${MC_DIFFICULTY:-peaceful}"
+apply_prop "gamemode"                     "${MC_GAMEMODE:-adventure}"
+apply_prop "pvp"                          "${MC_PVP:-true}"
+apply_prop "spawn-protection"             "${MC_SPAWN_PROTECTION:-1}"
+apply_prop "view-distance"                "${MC_VIEW_DISTANCE:-10}"
+apply_prop "simulation-distance"          "${MC_SIMULATION_DISTANCE:-10}"
+apply_prop "allow-nether"                 "${MC_ALLOW_NETHER:-false}"
+apply_prop "generate-structures"          "${MC_GENERATE_STRUCTURES:-false}"
+apply_prop "max-tick-time"                "${MC_MAX_TICK_TIME:-60000}"
+apply_prop "network-compression-threshold" "${MC_NETWORK_COMPRESSION_THRESHOLD:-256}"
 
 # ── 2. Fix permissions ───────────────────────────────────
 echo "[2/3] Fixing file permissions..."
-chown -R minecraft:minecraft /server/world /home/minecraft
+chown -R minecraft:minecraft /server /home/minecraft
 
 # ── 3. Start server ──────────────────────────────────────
 JVM_OPTS="${JVM_MAX_HEAP:--Xmx2G} ${JVM_MIN_HEAP:--Xms512M} ${JVM_EXTRA_OPTS:-}"

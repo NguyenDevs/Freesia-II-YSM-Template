@@ -21,9 +21,22 @@ services:
       - .env
 
     volumes:
-      - ./world:/server/world
+      - ./cache:/server/cache
+      - ./config:/server/config
+      - ./libraries:/server/libraries
       - ./logs:/server/logs
+      - ./world:/server/world
+      - ./lobby:/server/lobby
       - ./plugins:/server/plugins
+      - ./versions:/server/versions
+      - ./banned-ips.json:/server/banned-ips.json
+      - ./banned-players.json:/server/banned-players.json
+      - ./bukkit.yml:/server/bukkit.yml
+      - ./commands.yml:/server/commands.yml
+      - ./ops.json:/server/ops.json
+      - ./spigot.yml:/server/spigot.yml
+      - ./usercache.json:/server/usercache.json
+      - ./whitelist.json:/server/whitelist.json
 
 networks:
   freesia-network:
