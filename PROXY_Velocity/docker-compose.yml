@@ -20,7 +20,6 @@ services:
       - ./logs:/proxy/logs
       - ./velocity.toml:/proxy/velocity.toml
       - ./forwarding.secret:/proxy/forwarding.secret
-      # Map the security folder to the host for certificate access
       - ./plugins/Freesia/security:/proxy/plugins/Freesia/security
 
 networks:
