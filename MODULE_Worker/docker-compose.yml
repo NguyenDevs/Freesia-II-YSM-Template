@@ -39,6 +39,9 @@ services:
       - ./whitelist.json:/server/whitelist.json
       - ./banned-players.json:/server/banned-players.json
       - ./banned-ips.json:/server/banned-ips.json
+      - ./server.properties:/server/server.properties
+      - ./mounts.json:/server/mounts.json
+      - ./freesia_node_info.bin:/server/freesia_node_info.bin
 
     environment:
       JVM_MAX_HEAP: "${JVM_MAX_HEAP:--Xmx5G}"

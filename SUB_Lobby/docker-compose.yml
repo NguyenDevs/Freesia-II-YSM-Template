@@ -37,6 +37,10 @@ services:
       - ./spigot.yml:/server/spigot.yml
       - ./usercache.json:/server/usercache.json
       - ./whitelist.json:/server/whitelist.json
+      - ./server.properties:/server/server.properties
+      - ./help.yml:/server/help.yml
+      - ./permissions.yml:/server/permissions.yml
+      - ./wepif.yml:/server/wepif.yml
 
 networks:
   freesia-network:
