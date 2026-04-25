@@ -1,0 +1,84 @@
+announce-command-usage: |-
+  &eSử dụng:&c /tab announce <type> <name> <length>
+  &eHiện tại đang hỗ trợ: &7&lbar, scoreboard
+bossbar-feature-not-enabled: '&4NguyênDevs: &7Câu lệnh này yêu cầu tính năng Bossbar phải được bật.'
+bossbar-announce-command-usage: '&4NguyênDevs: &eSử dụng:&c /tab announce bar <bar name> <length>'
+bossbar-not-found: '&4NguyênDevs: &7Không có Bossbar nào với tên &c"%name%"'
+bossbar-already-announced: '&4NguyênDevs: &7Bossbar này đã được sử dụng'
+group-data-removed: '&4NguyênDevs: &7Tất cả dữ liệu đã được xoá bỏ khỏi nhóm &e%group%'
+group-value-assigned: '&4NguyênDevs: &3%property% ''&r%value%&r&7'' đã được nhập thành công vào nhóm &e%group%'
+group-value-removed: '&4NguyênDevs &3%property% &7đã được loại bỏ thành công khỏi nhóm
+  &e%group%'
+user-data-removed: '&4NguyênDevs: &7Tất cả dữ liệu đã được xoá bỏ khỏi người chơi &e%player%'
+user-value-assigned: '&4NguyênDevs: &3%property% ''&r%value%&r&7'' đã được nhập thành công vào người chơi &e%player%'
+user-value-removed: '&4NguyênDevs: &3%property% &7đã được loại bỏ thành công khỏi người chơi &e%player%'
+parse-command-usage: '&4NguyênDevs: &eSử dụng:&c /tab parse <player> <placeholder>'
+send-command-usage: |-
+  &eSử dụng:&c /tab send <type> <player> <bar name> <length>
+  &eHiện tại đang hỗ trợ: &7&lbar
+send-bar-command-usage: '&4NguyênDevs: &eSử dụng:&c /tab send bar <player> <bar name> <length>'
+team-feature-required: '&4NguyênDevs: &7Câu lệnh này yêu cầu tính năng Scoreboard phải được bật.'
+collision-command-ussage: '&4NguyênDevs: &eSử dụng:&c /tab setcollision <player> <true/false>'
+no-permission: '&4NguyênDevs: &cBạn không có quyền làm điều này.'
+command-only-from-game: '&4NguyênDevs: &cChỉ có thể thực thi câu lệnh này bởi người chơi.'
+player-not-online: '&4NguyênDevs: &7Không có người chơi trực tuyến với tên &c"%player%"'
+unlimited-nametag-mode-not-enabled: '&4NguyênDevs: &cCảnh báo! để tính năng này hoạt động, bạn phải kích hoạt unlimited-nametag-mode trong config!'
+invalid-number: '&4NguyênDevs: &e"%input%" &7không phải là một con số!'
+scoreboard-feature-not-enabled: '&4NguyênDevs: &7Câu lệnh này yêu cầu tính năng Scoreboard phải được bật.'
+scoreboard-announce-command-usage: '&4NguyênDevs: &eSử dụng:&c /tab announce scoreboard <scoreboard name>
+  <length>'
+scoreboard-not-found: '&4NguyênDevs: &7Không có Scoreboard nào mang tên &e"%name%"'
+nametag-preview-on: '&4NguyênDevs: &7Chế độ xem trước đã &akích hoạt&7.'
+nametag-preview-of: '&4NguyênDevs: &7Chế độ xem trước đã &3vô hiệu&7.'
+reload-success: '&4NguyênDevs: &7Tải lại cấu hình thành công'
+reload-fail-file: '&4NguyênDevs: &cTải lại cấu hình thất bại, tệp tin %file% có cú pháp lỗi. Kiểm tra Console để biết thêm thông tin.'
+scoreboard-toggle-on: '&4NguyênDevs: &7Scoreboard đã &akích hoạt&7.'
+scoreboard-toggle-off: '&4NguyênDevs: &7Scoreboard đã &cvô hiệu&7.'
+bossbar-toggle-on: '&4NguyênDevs: &7Bossbar đã &akích hoạt&7.'
+bossbar-toggle-off: '&4NguyênDevs: &7Bossbar đã &cvô hiệu &7.'
+scoreboard-show-usage: '&4NguyênDevs: &eSử dụng:&c /tab scoreboard show <scoreboard> [player]'
+bossbar-not-marked-as-announcement: '&4NguyênDevs: &7Bossbar này không được đánh dấu là Thông báo và do đó đã được hiển thị vĩnh viễn (nếu điều kiện hiển thị được đáp ứng)'
+bossbar-announcement-success: '&4NguyênDevs: &7Bossbar Thông báo &6%bossbar% &7đang hiển thị trong %length% giây.'
+bossbar-send-success: '&4NguyênDevs: &7Đang gửi Bossbar &6%bossbar% &7tới người chơi &6%player% &7trong %length% giây.'
+armorstands-disabled-cannot-use-preview: '&4NguyênDevs: &7ArmorStand đang bị vô hiệu, do đó bạn sẽ không thể sử dụng tính năng Xem trước'
+help-menu:
+- '&m                                                                                '
+- ' &8>> &3&l/tab reload'
+- '      - &7Tải lại cấu hình plugin'
+- ' &8>> &3&l/tab &9group&3/&9player &3<name> &9<property> &3<value...>'
+- '      - &7Sử dụng &8/tab group/player &7để hiển thị các thuộc tính'
+- ' &8>> &3&l/tab nametag preview'
+- '      - &7Hiển thị nametag của bạn cho chính bạn, nhằm mục đích thử nghiệm'
+- ' &8>> &3&l/tab announce bar &3<name> &9<seconds>'
+- '      - &7Tạm thời hiển thị Bossbar tới tất cả người chơi'
+- ' &8>> &3&l/tab parse <player> <placeholder> '
+- '      - &7Kiểm tra nếu placeholder hoạt động'
+- ' &8>> &3&l/tab debug [player]'
+- '      - &7Hiển thị thông tin gỡ lỗi cho người chơi'
+- ' &8>> &3&l/tab cpu'
+- '      - &7Xem mức tiêu thụ CPU'
+- ' &8>> &3&l/tab group/player <name> remove'
+- '      - &7Dọn dẹp tất cả dữ liệu của player/group'
+- '&m                                                                                '
+mysql-help-menu:
+- '&6/tab mysql upload - Tải lên dữ liệu từ file lên mysql'
+- '&6/tab mysql download - Tải xuống dữ liệu từ mysql về file'
+mysql-fail-not-enabled: '&4NguyênDevs: &cKhông thể tải xuống/tải lên dữ liệu từ/đến MySQL, vì đang bị vô hiệu hoá.'
+mysql-fail-error: '&4NguyênDevs: &7Tải xuống MySQL không thành công do lỗi. Kiểm tra Console để biết thêm thông tin.'
+mysql-download-success: '&4NguyênDevs: &7Dữ liệu MySQL đã tải xuống &athành công'
+mysql-upload-success: '&4NguyênDevs: &7Dữ liệu MySQL đã tải lên &athành công.'
+nametag-help-menu:
+- /tab nametag preview [player] - Bật/Tắt chế độ xem trước thông qua ArmorStand
+- /tab nametag toggle [player] - Bật/Tắt nametags của tất cả người chơi đối với người gửi
+nametag-feature-not-enabled: '&4NguyênDevs: &7Câu lệnh này yêu cầu tính năng Nametag phải được bật.'
+nametags-hidden: '&4NguyênDevs: &7Nametags của tất cả người chơi đã được &cẩn đi&7 với bạn.'
+nametags-shown: '&4NguyênDevs: &7Nametags của tất cả người chơi đã được &ahiển thị &7với bạn.'
+collision-command-usage: '&4NguyênDevs: &eSử dụng:&c /tab setcollision <player> <true/false>'
+scoreboard-help-menu:
+- /tab scoreboard [on/off/toggle] [player] [options]
+- /tab scoreboard show <name> [player]
+- /tab scoreboard announce <name> <length>
+bossbar-help-menu:
+- /tab bossbar [on/off/toggle] [player] [options]
+- /tab bossbar send <name> [player]
+- /tab bossbar announce <name> <length>

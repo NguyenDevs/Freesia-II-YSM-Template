@@ -1,0 +1,28 @@
+# =============================================================
+# .dockerignore — SUB_Lobby
+# =============================================================
+
+# Windows scripts
+Run.Bat
+*.bat
+
+# Server Data (mount via volume)
+world/
+logs/
+crash-reports/
+cache/
+libraries/
+versions/
+usercache.json
+*.log
+
+# Git & IDE
+.git/
+.gitignore
+.dockerignore
+.vscode/
+.idea/
+
+# Binaries/Other
+*.bin
+*.tmp

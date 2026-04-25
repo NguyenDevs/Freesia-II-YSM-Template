@@ -1,0 +1,31 @@
+JumpPads:
+  lobby, 550, 85, -1:
+    owners:
+    - 22f5c548-dce8-4e1b-9e40-d8abdbf26534
+    plate: LIGHT_WEIGHTED_PRESSURE_PLATE
+    power: 50.0
+    angle: 45.0
+  lobby, 605, 84, -1:
+    owners:
+    - 22f5c548-dce8-4e1b-9e40-d8abdbf26534
+    plate: LIGHT_WEIGHTED_PRESSURE_PLATE
+    power: 50.0
+    angle: 45.0
+  lobby, 516, 88, -1:
+    owners:
+    - 22f5c548-dce8-4e1b-9e40-d8abdbf26534
+    plate: LIGHT_WEIGHTED_PRESSURE_PLATE
+    power: 25.0
+    angle: 25.0
+  lobby, 496, 94, -10:
+    owners:
+    - 22f5c548-dce8-4e1b-9e40-d8abdbf26534
+    plate: LIGHT_WEIGHTED_PRESSURE_PLATE
+    power: 280.0
+    angle: 45.0
+  lobby, 0, 100, 0:
+    owners:
+    - 22f5c548-dce8-4e1b-9e40-d8abdbf26534
+    plate: LIGHT_WEIGHTED_PRESSURE_PLATE
+    power: 320.0
+    angle: 50.0

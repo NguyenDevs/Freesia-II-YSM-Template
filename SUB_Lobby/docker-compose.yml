@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  sub-lobby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: freesia/sub-lobby:1.0.0
+    container_name: freesia-sub-lobby
+    restart: unless-stopped
+    
+    networks:
+      - freesia-network
+
+    ports:
+      - "25566:25566"
+
+    env_file:
+      - .env
+
+    volumes:
+      - ./world:/server/world
+      - ./logs:/server/logs
+      - ./plugins:/server/plugins
+
+networks:
+  freesia-network:
+    external: true

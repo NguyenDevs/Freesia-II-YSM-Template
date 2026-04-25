@@ -1,0 +1,36 @@
+# This is the Message file for all Custom Jumppads messages.
+#
+# All messages are fully customizable and support color codes, formatting and ASCII symbols.
+# Set the Prefix and use %prefix% to add the corresponding prefix to a message.
+# Prepend any message with <ActionBar> to send it as an ActionBar message.
+# Leave a message blank ('') to disable it.
+#
+# You can also create messages with Hover and Click events. Syntax options: (Space between comma and quote is NOT allowed)
+#  - ["Message","/Command"]
+#  - ["Message","Hover"]
+#  - ["Message","/Command","Hover"]
+#  - ["Message","/Command","Suggest"]
+#  - ["Message","/Command","Hover","Suggest"]
+# You can add as many events to a message as you want. Example:
+# '%prefix% &cInvalid arguments! ["&c&n&oHelp","/jumppads help","&aClick to get help!"]'
+# The "Suggest" tag is used if the click event should suggest the command. Default is Run.
+
+Prefix: '&4NguyênDevs:'
+Messages:
+  PlayerOnly: '%prefix% &cChỉ có thể thực thi câu lệnh này bởi người chơi.'
+  InvalidPermission: '%prefix% &7 Bạn không có quyền làm điều này!'
+  InvalidArguments: '%prefix% &cTham số không hợp lệ! ["&eSử dụng:&c /jumppads help","&aClick
+    để xem trợ giúp!"]'
+  InvalidTarget: '%prefix% &7Jumppads chỉ có thể tạo trên tấm áp lực và khối slime!'
+  InvalidPower: '%prefix% &cBạn không có quyền thiết lập <sức mạnh> vượt quá %maxPower%!'
+  ConfigurationsReloaded: '%prefix% &7Tải lại cấu hình thành công!'
+  Created: '%prefix% &aJumppad đã được tạo!'
+  Deleted: '%prefix% &aJumppad đã được xoá!'
+  NotAJumppad: '%prefix% &cKhông mục tiêu không phải là jumppad!'
+  InvalidAttribute: '%prefix% &cThuộc tính không hợp lệ!'
+  AddedAttribute: '%prefix% &aGiá trị thuộc tính đã được thiết lập.'
+  RemovedAttribute: '%prefix% &aĐã loại bỏ thuộc tính. Đang sử dụng thiết lập mặc
+    định.'
+  NotSupported: '%prefix% &aPhiên bản này không được hỗ trợ.'
+  UnsafeTeleport: '%prefix% &cKhông có vị trí an toàn để thực hiện jumppad!'
+  InCombat: '%prefix% &cBạn không thể thực hiện jumppad khi đang trong combat!'

@@ -1,0 +1,100 @@
+#usage: %animation:NAME%
+av:
+  change-interval: 500
+  texts:
+  - '&6-=✦=-'
+  - '&6-=&e✦&6=-'
+  - '&6-&e=&6✦&e=&6-'
+  - '&e-&6=✦&6=&e-'
+av2:
+  change-interval: 50
+  texts:
+  - '&7| &8Ping: &7%ping% &7| &8Ram:&7 %memory-used%&8/&7%memory-max%&8Mb &7| &8Tps:
+    &7%tps% &7|'
+health2:
+  change-interval: 50
+  texts:
+  - '%health%'
+loc:
+  change-interval: 50
+  texts:
+  - '&7%player_x%&8x,&7 %player_y%&8y,&7 %player_z%&8z'
+xp:
+  change-interval: 50
+  texts:
+  - '&7%player_current_exp%&8xᴘ (%player_level%.lv)'
+time:
+  change-interval: 50
+  texts:
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '&3%server_time_HH:mm:ss%#B2B2B2/&3%server_time_dd.MM.yyyy%'
+#  - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+#  - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+#  - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+#  - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+ # - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+ # - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+ # - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+ # - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+ # - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+  - '#B2B2B2%server_time_HH:mm:ss%&3/#B2B2B2%server_time_dd.MM.yyyy%'
+online:
+  change-interval: 50
+  texts:
+#  - '&3%server_online%&8/&7%server_max_players%'
+  - '#B2B2B2%server_online%&8/&7%server_max_players%'
+web:
+  change-interval: 50
+  texts:
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴ</#5300FF><#5300FF>&lɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢ</#5300FF><#5300FF>&lᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜ</#5300FF><#5300FF>&lʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏ</#5300FF><#5300FF>&lᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇ</#5300FF><#5300FF>&lɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴ</#5300FF><#5300FF>&lᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅ</#5300FF><#5300FF>&lᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇ</#5300FF><#5300FF>&lᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠ</#5300FF><#5300FF>&ls.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠs</#5300FF><#5300FF>&l.ᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠs.</#5300FF><#5300FF>&lᴡᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡ</#5300FF><#5300FF>&lᴏʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏ</#5300FF><#5300FF>&lʀʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀ</#5300FF><#5300FF>&lʟᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟ</#5300FF><#5300FF>&lᴅ</#F200DA>'
+  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#5300FF><#5300FF></#F200DA>'
+#  - '<#F200DA>&lɴɢᴜʏᴇɴᴅᴇᴠ.ᴏɴʟɪɴᴇ</#5300FF>'
+
+  - '<#F200DA>&lɴ<#F200DA>&lɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢ</#F200DA><#F200DA>&lᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜ</#F200DA><#F200DA>&lʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏ</#F200DA><#F200DA>&lᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇ</#F200DA><#F200DA>&lɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴ</#F200DA><#F200DA>&lᴅᴇᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅ</#F200DA><#F200DA>&lᴇᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇ</#F200DA><#F200DA>&lᴠs.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠ</#F200DA><#F200DA>&ls.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs</#F200DA><#F200DA>&l.ᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.</#F200DA><#F200DA>&lᴡᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡ</#F200DA><#F200DA>&lᴏʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏ</#F200DA><#F200DA>&lʀʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀ</#F200DA><#F200DA>&lʟᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟ</#F200DA><#F200DA>&lᴅ</#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA><#F200DA></#5300FF>'
+  - '<#5300FF>&lɴɢᴜʏᴇɴᴅᴇᴠs.ᴡᴏʀʟᴅ</#F200DA>'
+  
+barcolors:
+  change-interval: 1000
+  texts:
+  - RED
+  - BLUE
+  - GREEN
+  - YELLOW

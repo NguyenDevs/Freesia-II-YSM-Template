@@ -1,0 +1,30 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 127.0.0.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1777138927826
+  login: 1777138769333
+money: '0'
+last-account-name: NguyenDevs
+logoutlocation:
+  world: 1d493d75-3a88-493a-bd5b-52956987fe61
+  world-name: lobby
+  x: 513.7120288326556
+  y: 88.0
+  z: -3.010491953041739
+  yaw: -12.0536470413208
+  pitch: 7.0499420166015625

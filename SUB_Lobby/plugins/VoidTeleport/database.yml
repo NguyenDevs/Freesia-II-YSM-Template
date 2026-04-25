@@ -1,0 +1,7 @@
+worlds:
+  lobby:
+    spawnpoint: lobby:510.53949380313423:88.0:-0.4828176116279981:-90.35409:0.32195562
+    y-void: -64.0
+    enabled: true
+    keep-inventory: true
+    nether: false

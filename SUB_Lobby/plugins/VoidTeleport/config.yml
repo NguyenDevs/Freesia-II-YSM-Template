@@ -1,0 +1,113 @@
+#-----------------------------------------------------------------------------------------------------------------------#
+#                                                                                                                       #
+#         ███████╗███╗   ██╗██████╗ ██╗     ███████╗███████╗███████╗ ██████╗  █████╗ ███╗   ███╗███████╗███████╗        #
+#         ██╔════╝████╗  ██║██╔══██╗██║     ██╔════╝██╔════╝██╔════╝██╔════╝ ██╔══██╗████╗ ████║██╔════╝██╔════╝        #
+#         █████╗  ██╔██╗ ██║██║  ██║██║     █████╗  ███████╗███████╗██║  ███╗███████║██╔████╔██║█████╗  ███████╗        #
+#         ██╔══╝  ██║╚██╗██║██║  ██║██║     ██╔══╝  ╚════██║╚════██║██║   ██║██╔══██║██║╚██╔╝██║██╔══╝  ╚════██║        #
+#         ███████╗██║ ╚████║██████╔╝███████╗███████╗███████║███████║╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗███████║        #
+#         ╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝╚══════╝        #
+#                  _____ _        _ _                                   _                  __                           #
+#                 |_   _| |      | (_)                                 (_)                / _|                          #
+#                   | | | |_ __ _| |_  __ _ _ __    ___  ___ _ ____   ___  ___ ___  ___  | |_ ___  _ __                 #
+#                   | | | __/ _` | | |/ _` | '_ \  / __|/ _ \ '__\ \ / / |/ __/ _ \/ __| |  _/ _ \| '__|                #
+#                  _| |_| || (_| | | | (_| | | | | \__ \  __/ |   \ V /| | (_|  __/\__ \ | || (_) | |                   #
+#                 |_____|\__\__,_|_|_|\__,_|_| |_| |___/\___|_|    \_/ |_|\___\___||___/ |_| \___/|_|                   #
+#                                          _               _                _                      _                    #
+#                                         | |             | |              | |                    | |                   #
+#                 _   _  ___  _   _ _ __  | |__   ___  ___| |_   _ __   ___| |___      _____  _ __| | __                #
+#                | | | |/ _ \| | | | '__| | '_ \ / _ \/ __| __| | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ /                #
+#                | |_| | (_) | |_| | |    | |_) |  __/\__ \ |_  | | | |  __/ |_ \ V  V / (_) | |  |   <                 #
+#                 \__, |\___/ \__,_|_|    |_.__/ \___||___/\__| |_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_\                #
+#                  __/ |                                                                                                #
+#                 |___/                                                                                                 #
+#                                                                                                                       #
+#                               Welcome to the main configuration file (VoidTeleport v2.4.5)                            #
+#                                   This plugin is currently supporting 1.8.x - 1.21.x                                  #
+#                                                                                                                       #
+#                            Contact us at SpigotMC if you're having any issues or suggestions                          #
+#                                              Spigot Name: EndlessGames                                                #
+#                                                                                                                       #
+#-----------------------------------------------------------------------------------------------------------------------#
+
+#-----------------------------------------------------------------------------------------------------------------------#
+#                                                _                                                                      #
+#                                               | |                                                                     #
+#                                               | |     __ _ _ __   __ _                                                #
+#                                               | |    / _` | '_ \ / _` |                                               #
+#                                               | |___| (_| | | | | (_| |                                               #
+#                                               \_____/\__,_|_| |_|\__, |                                               #
+#                                                                   __/ |                                               #
+#                                                                  |___/                                                #
+#                                                                                                                       #
+#-----------------------------------------------------------------------------------------------------------------------#
+
+prefix: "&4NguyênDevs:"
+
+help:
+  - "&8&l&m---------------------------------------------"
+  - "&3&l                  VoidTeleport v%version"
+  - "&8&l&m---------------------------------------------"
+  - "&a/vt list &7- Danh sách các thế giới mà VoidTeleport đang hoạt động"
+  - "&a/vt toggle [world] &7- Bật/Tắt VoidTeleport ở thế giới đó"
+  - ""
+  - "&a/vt setspawn [world]"
+  - "&a/vt offset <world> <y>"
+  - "&a/vt keepinventory <world> <true/false>"
+  - "&a/vt nether [world] [true/false]"
+  - ""
+  - "&a/vt reload &7- Tải lại cấu hình plugin"
+  - "&8&l&m---------------------------------------------"
+
+list:
+  header:
+    - "&8&l&m------------------------------------"
+    - "&3&l             VoidTeleport"
+    - "&8&l&m------------------------------------"
+  body: "&aThế giới đang hoạt động: "
+  footer:
+    - "&8&l&m------------------------------------"
+
+usage:
+  toggle: "%prefix &eSử dụng: &c/vt toggle [world]"
+  offset: "%prefix &eSử dụng: &c/vt offset <world> <y>"
+  setspawn: "%prefix &eSử dụng: &c/vt setspawn [world]"
+  keepinventory: "%prefix &eSử dụng: &c/vt keepinventory <world> <true/false>"
+  nether: "%prefix &eSử dụng: &c/vt nether <world> <true/false>"
+
+player-teleported: "%prefix &7Bạn đã được dịch chuyển trở lại!"
+
+nether-message: "%prefix &cBạn không được vượt qua tầng trên của nether!"
+
+empty-list: "%prefix &7Không tìm thấy điều kiện. &eSử dụng: &c/vt setspawn <worldName> &7để bắt đầu cài đặt!"
+
+world-spawnpoint-notset: "%prefix &cTrước khi kích hoạt VoidTeleport, bạn phải set spawnpoint cho thế giới đó."
+
+offset-set: "%prefix &7Đã thiết lập spawnpoint offset tại %offset cho thế giới %world."
+
+setspawn-success: "%prefix &7Đã thiết lập spawnpoint &athành công&7."
+
+keepinventory-success: "%prefix &7KeepInventory đã thiết lập &athành công&7."
+
+nether-world: "%prefix &7Bạn không thể sửa thiết lập này cho nether."
+
+nether-success: "%prefix &7Nether đã thiết lập &athành công&7."
+
+nether-unsuccess: "%prefix &cThế giới %world không phải là nether."
+
+nether-already-disabled: "%prefix &cNether đã được vô hiệu hoá."
+
+reload-success: "%prefix &7Đã tải lại cấu hình thành công!"
+
+voidteleport-enabled: "%prefix &7Bạn đã kích hoạt VoidTeleport ở thế giới %world"
+
+voidteleport-disabled: "%prefix &7Bạn đã vô hiệu VoidTeleport ở thế giới %world"
+
+only-player: "%prefix &cChỉ có thể thực thi câu lệnh này bởi người chơi."
+
+no-permission: "%prefix &cBạn không có quyền làm điều này."
+
+spawnpoint-notset: "%prefix &cChưa thiết lập spawnpoint. &eSử dụng: &c/vt setspawn <worldname>."
+
+world-not-enabled: "%prefix &cThế giới %world chưa được tải! &eSử dụng: '/vt setspawn/toggle %world' để bắt đầu cài đặt."
+
+world-not-exists: "%prefix &cThế giới không tồn tại. Vui lòng kiểm tra lại!"
